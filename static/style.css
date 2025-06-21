@@ -1,0 +1,88 @@
+body 
+{ 
+    font-family: sans-serif; 
+    padding: 2em;
+    background-color: #0D1B2A;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+label 
+{ 
+    display: block; 
+    margin-top: 1em; 
+}
+        
+input, select 
+{
+    width: 200px; 
+    padding: 0.5em; 
+    background-color: #778DA9;
+    color: #E0E1DD;
+}
+
+button
+{ 
+    margin-top: 1em; 
+    padding: 0.5em 1em; 
+}
+li{
+    list-style: none;
+}
+#main-container{
+    background-color: #415A77;
+    border-radius: 20px;
+
+    padding: 20px;
+    width: 350px;
+
+    color: #E0E1DD;
+}
+
+h1{
+    background-color: #415A77;
+    color:#E0E1DD;
+    border-radius: 20px;
+
+    padding: 20px;
+    width: 350px;
+}
+
+button {
+    background-color: #415A77;
+    color: #E0E1DD;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 40px;
+    width : 130px;
+    transition: 200ms;
+}
+
+button:hover{
+    height: 50px;
+    width: 140px;
+    
+}
+
+#Vorhersage{
+    background-color: #415A77;
+    border-radius: 20px;
+    padding: 20px;
+    width: 350px;
+
+    color: #E0E1DD;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input::placeholder{
+    color: #E0E1DD;
+}
+p{
+    color: #E0E1DD;
+}

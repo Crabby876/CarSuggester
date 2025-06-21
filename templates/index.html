@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Auto-Vorschlag</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Auto-Vorschlag</h1>
+
+    {% if feedback %}
+        <p><strong>{{ feedback }}</strong></p>
+    {% endif %}
+
+    {% if not vorhersage %}
+    <form method="post">
+        <div id = "main-container">
+            <label>Baujahr: <input type="number" name="jahr" required></label>
+            <label>PS: <input type="number" name="ps" required></label>
+            <label>Preis (CHF): <input type="number" name="preis" required></label>
+
+            <label>Getriebe:
+                <select name="getriebe">
+                    {% for typ in getriebe_typen %}
+                        <option value="{{ typ }}">{{ typ }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+
+            <label>Antrieb:
+                <select name="antrieb">
+                    {% for typ in antrieb_typen %}
+                        <option value="{{ typ }}">{{ typ }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+
+            <label>Türen: <input type="number" name="tueren" min="2" max="6" required></label>
+
+            <label>Karosserie:
+                <select name="karosserie">
+                    {% for typ in karosserie_typen %}
+                        <option value="{{ typ }}">{{ typ }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+        </div>
+
+        <button type="submit">Vorschlagen</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                     <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    {% endif %}
+
+    {% if vorhersage %}
+        <div id= "Vorhersage">
+            <h2>Empfohlenes Auto:</h2>
+            <p><strong>{{ vorhersage }}</strong></p>
+        </div>
+            <form method="post">
+                <button type="submit" name="zufrieden">Zurück</button>
+            </form>
+
+    {% endif %}
+
+</body>
+</html>
