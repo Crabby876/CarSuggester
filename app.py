@@ -72,4 +72,4 @@ def index():
     return render_template("index.html", getriebe_typen=getriebe_typen, antrieb_typen=antrieb_typen, karosserie_typen=karosserie_typen, vorhersage=vorhersage, feedback=feedback)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
