@@ -4,12 +4,21 @@ import joblib
 import pandas as pd
 import os
 
+_model = None
+_columns = None
+
+def get_model():
+    global _model, _columns
+    if _model is None or _columns is None:
+        _model, _columns = joblib.load("modell_komprimiert.joblib")
+    return _model, _columns
+
 app = Flask(__name__)
 app.secret_key = "123456789"
 modell_datei = "modell_komprimiert.joblib"
 
 if os.path.exists(modell_datei):
-    RF, spalten = joblib.load(modell_datei)
+    RF, spalten = get_model()
 
 getriebe_typen = ['MANUAL', 'AUTOMATIC', 'AUTOMATED_MANUAL']
 antrieb_typen = ['rear wheel drive', 'front wheel drive', 'all wheel drive']
