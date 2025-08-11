@@ -14,10 +14,10 @@
 
     {% if not vorhersage %}
     <form method="post">
-        <div id = "main-container">
-            <label>Baujahr: <input type="number" name="jahr" placeholder="z.B. 2020"  required></label>
-            <label>PS: <input type="number" name="ps" placeholder="450" required></label>
-            <label>Preis (CHF): <input type="number" name="preis" placeholder="z.B. 52000" required></label>
+        <div id="main-container">
+            <label>Baujahr: <input type="number" name="jahr" required></label>
+            <label>PS: <input type="number" name="ps" required></label>
+            <label>Preis (CHF): <input type="number" name="preis" required></label>
 
             <label>Getriebe:
                 <select name="getriebe">
@@ -35,7 +35,7 @@
                 </select>
             </label>
 
-            <label>Türen: <input type="number" name="tueren" min="2" max="6" placeholder="z.B. 2" required></label>
+            <label>Türen: <input type="number" name="tueren" min="2" max="6" required></label>
 
             <label>Karosserie:
                 <select name="karosserie">
@@ -60,24 +60,13 @@
     {% endif %}
 
     {% if vorhersage %}
-        <div id= "Vorhersage">
+        <div id="Vorhersage">
             <h2>Empfohlenes Auto:</h2>
             <p><strong>{{ vorhersage }}</strong></p>
         </div>
-            <form method="post">
-                <div id="Vorhersage2">
-                    <label>Unzufrieden? Geben Sie das Auto an, an welches Sie gedacht haben:
-                    <input type="text" name="wunsch_auto" placeholder="z.B. BMW 1 Series" required>
-                    </label>
-                    <input type="hidden" name="nachtrainieren" value="1">
-                </div>
-                
-                <button type="submit">Nachtrainieren</button>
-            </form>
-            <form method="post">
-                <button type="submit" name="zufrieden">Ich bin zufrieden</button>
-            </form>
-
+        <form method="post" style="margin-top: 20px;">
+            <button type="submit" name="zufrieden">Zurück</button>
+        </form>
     {% endif %}
 
 </body>

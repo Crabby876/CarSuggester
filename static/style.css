@@ -69,18 +69,7 @@ button:hover{
 
 #Vorhersage{
     background-color: #415A77;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    padding: 20px;
-    width: 350px;
-
-    color: #E0E1DD;
-}
-#Vorhersage2{
-    background-color: #415A77;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-
+    border-radius: 20px;
     padding: 20px;
     width: 350px;
 
@@ -92,7 +81,7 @@ form{
     align-items: center;
 }
 input::placeholder{
-    color: #ffffff5e;
+    color: #E0E1DD;
 }
 p{
     color: #E0E1DD;
